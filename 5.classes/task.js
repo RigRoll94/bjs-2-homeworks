@@ -130,11 +130,8 @@ class Student {
 
     getAverage() {
         let allNameSubject = Object.keys(this.marks);
-        let markSubject = Object.values(this.marks);
         let avgMarkSubject = 0;
-        markSubject.forEach(item => {
-          avgMarkSubject += item.reduce((a, b) => a + b / item.length, 0)
-        })
+        allNameSubject.forEach(item => avgMarkSubject += this.getAverageBySubject(item));
         return avgMarkSubject / allNameSubject.length;
     }
 }
